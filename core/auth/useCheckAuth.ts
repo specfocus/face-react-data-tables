@@ -41,40 +41,40 @@ import useNotify from '../sideEffect/useNotify';
  * } // tip: use useAuthState() hook instead
  */
 const useCheckAuth = (): CheckAuth => {
-    const authProvider = useAuthProvider();
-    const notify = useNotify();
-    const logout = useLogout();
+  const authProvider = useAuthProvider();
+  const notify = useNotify();
+  const logout = useLogout();
 
-    const checkAuth = useCallback(
-        (
-            params: any = {},
-            logoutOnFailure = true,
-            redirectTo = defaultAuthParams.loginUrl,
-            disableNotification = false
-        ) =>
-            authProvider.checkAuth(params).catch(error => {
-                if (logoutOnFailure) {
-                    logout(
-                        {},
-                        error && error.redirectTo
-                            ? error.redirectTo
-                            : redirectTo
-                    );
-                    const shouldSkipNotify =
-                        disableNotification ||
-                        (error && error.message === false);
-                    !shouldSkipNotify &&
-                        notify(
-                            getErrorMessage(error, 'ra.auth.auth_check_error'),
-                            'warning'
-                        );
-                }
-                throw error;
-            }),
-        [authProvider, logout, notify]
-    );
+  const checkAuth = useCallback(
+    (
+      params: any = {},
+      logoutOnFailure = true,
+      redirectTo = defaultAuthParams.loginUrl,
+      disableNotification = false
+    ) =>
+      authProvider.checkAuth(params).catch(error => {
+        if (logoutOnFailure) {
+          logout(
+            {},
+            error && error.redirectTo
+              ? error.redirectTo
+              : redirectTo
+          );
+          const shouldSkipNotify =
+            disableNotification ||
+            (error && error.message === false);
+          !shouldSkipNotify &&
+            notify(
+              getErrorMessage(error, 'ra.auth.auth_check_error'),
+              'warning'
+            );
+        }
+        throw error;
+      }),
+    [authProvider, logout, notify]
+  );
 
-    return authProvider ? checkAuth : checkAuthWithoutAuthProvider;
+  return authProvider ? checkAuth : checkAuthWithoutAuthProvider;
 };
 
 const checkAuthWithoutAuthProvider = () => Promise.resolve();
@@ -91,18 +91,18 @@ const checkAuthWithoutAuthProvider = () => Promise.resolve();
  * @return {Promise} Resolved to the authProvider response if the user passes the check, or rejected with an error otherwise
  */
 type CheckAuth = (
-    params?: any,
-    logoutOnFailure?: boolean,
-    redirectTo?: string,
-    /** @deprecated to disable the notification, authProvider.checkAuth() should return an object with an error property set to true */
-    disableNotification?: boolean
+  params?: any,
+  logoutOnFailure?: boolean,
+  redirectTo?: string,
+  /** @deprecated to disable the notification, authProvider.checkAuth() should return an object with an error property set to true */
+  disableNotification?: boolean
 ) => Promise<any>;
 
 const getErrorMessage = (error, defaultMessage) =>
-    typeof error === 'string'
-        ? error
-        : typeof error === 'undefined' || !error.message
-        ? defaultMessage
-        : error.message;
+  typeof error === 'string'
+    ? error
+    : typeof error === 'undefined' || !error.message
+      ? defaultMessage
+      : error.message;
 
 export default useCheckAuth;

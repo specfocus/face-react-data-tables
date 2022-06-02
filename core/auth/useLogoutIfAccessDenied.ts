@@ -39,71 +39,71 @@ let timer;
  * }
  */
 const useLogoutIfAccessDenied = (): LogoutIfAccessDenied => {
-    const authProvider = useAuthProvider();
-    const logout = useLogout();
-    const notify = useNotify();
-    const navigate = useNavigate();
-    const logoutIfAccessDenied = useCallback(
-        (error?: any, disableNotification?: boolean) =>
+  const authProvider = useAuthProvider();
+  const logout = useLogout();
+  const notify = useNotify();
+  const navigate = useNavigate();
+  const logoutIfAccessDenied = useCallback(
+    (error?: any, disableNotification?: boolean) =>
+      authProvider
+        .checkError(error)
+        .then(() => false)
+        .catch(async e => {
+          const logoutUser = e?.logoutUser ?? true;
+
+          //manual debounce
+          if (timer) {
+            // side effects already triggered in this tick, exit
+            return true;
+          }
+          timer = setTimeout(() => {
+            timer = undefined;
+          }, 0);
+
+          const shouldNotify = !(
+            disableNotification ||
+            (e && e.message === false) ||
+            (error && error.message === false)
+          );
+          if (shouldNotify) {
+            // notify only if not yet logged out
             authProvider
-                .checkError(error)
-                .then(() => false)
-                .catch(async e => {
-                    const logoutUser = e?.logoutUser ?? true;
+              .checkAuth({})
+              .then(() => {
+                if (logoutUser) {
+                  notify(
+                    'ra.notification.logged_out',
+                    'warning'
+                  );
+                } else {
+                  notify(
+                    'ra.notification.not_authorized',
+                    'warning'
+                  );
+                }
+              })
+              .catch(() => { });
+          }
+          const redirectTo =
+            e && e.redirectTo
+              ? e.redirectTo
+              : error && error.redirectTo
+                ? error.redirectTo
+                : undefined;
 
-                    //manual debounce
-                    if (timer) {
-                        // side effects already triggered in this tick, exit
-                        return true;
-                    }
-                    timer = setTimeout(() => {
-                        timer = undefined;
-                    }, 0);
+          if (logoutUser) {
+            logout({}, redirectTo);
+          } else {
+            navigate(redirectTo);
+          }
 
-                    const shouldNotify = !(
-                        disableNotification ||
-                        (e && e.message === false) ||
-                        (error && error.message === false)
-                    );
-                    if (shouldNotify) {
-                        // notify only if not yet logged out
-                        authProvider
-                            .checkAuth({})
-                            .then(() => {
-                                if (logoutUser) {
-                                    notify(
-                                        'ra.notification.logged_out',
-                                        'warning'
-                                    );
-                                } else {
-                                    notify(
-                                        'ra.notification.not_authorized',
-                                        'warning'
-                                    );
-                                }
-                            })
-                            .catch(() => {});
-                    }
-                    const redirectTo =
-                        e && e.redirectTo
-                            ? e.redirectTo
-                            : error && error.redirectTo
-                            ? error.redirectTo
-                            : undefined;
-
-                    if (logoutUser) {
-                        logout({}, redirectTo);
-                    } else {
-                        navigate(redirectTo);
-                    }
-
-                    return true;
-                }),
-        [authProvider, logout, notify, history]
-    );
-    return authProvider
-        ? logoutIfAccessDenied
-        : logoutIfAccessDeniedWithoutProvider;
+          return true;
+        }),
+    [authProvider, logout, notify, history]
+  );
+  return authProvider
+    ? logoutIfAccessDenied
+    : logoutIfAccessDeniedWithoutProvider;
 };
 
 const logoutIfAccessDeniedWithoutProvider = () => Promise.resolve(false);
@@ -118,9 +118,9 @@ const logoutIfAccessDeniedWithoutProvider = () => Promise.resolve(false);
  * @return {Promise} Resolved to true if there was a logout, false otherwise
  */
 type LogoutIfAccessDenied = (
-    error?: any,
-    /** @deprecated to disable the notification, authProvider.checkAuth() should return an object with an error property set to true */
-    disableNotification?: boolean
+  error?: any,
+  /** @deprecated to disable the notification, authProvider.checkAuth() should return an object with an error property set to true */
+  disableNotification?: boolean
 ) => Promise<boolean>;
 
 export default useLogoutIfAccessDenied;

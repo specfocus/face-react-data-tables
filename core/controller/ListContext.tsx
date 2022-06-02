@@ -43,7 +43,7 @@ import { ListControllerProps } from './useListController';
  *
  * @example
  *
- * import { useListController, ListContext } from '../../core';
+ * import { useListController, ListContext } from '../core';
  *
  * const List = props => {
  *     const controllerProps = useListController(props);

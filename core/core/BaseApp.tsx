@@ -25,7 +25,7 @@ export type ChildrenFunction = () => ComponentType[];
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
- * } from '../../core';
+ * } from '../core';
  *
  * const App = () => (
  *     <Core dataProvider={myDataProvider}>
@@ -40,7 +40,7 @@ export type ChildrenFunction = () => ComponentType[];
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
- * } from '../../core';
+ * } from '../core';
  *
  * const App = () => (
  *     <CoreAdmin dataProvider={myDataProvider}>
@@ -62,7 +62,7 @@ export type ChildrenFunction = () => ComponentType[];
  *     Resource,
  *     ListGuesser,
  *     useDataProvider,
- * } from '../../core';
+ * } from '../core';
  *
  * const App = () => (
  *     <BaseAppContext dataProvider={myDataProvider}>

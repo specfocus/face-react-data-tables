@@ -7,7 +7,7 @@ import { createContext } from 'react';
  *
  * @example
  *
- * import { useResourceContext, useTranslate } from '../../core';
+ * import { useResourceContext, useTranslate } from '../core';
  *
  * const MyCustomEditTitle = props => {
  *     const name = useResourceContext(props);

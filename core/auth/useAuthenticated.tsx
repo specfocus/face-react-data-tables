@@ -29,8 +29,8 @@ const emptyParams = {};
  *     );
  */
 export default (params: any = emptyParams) => {
-    const checkAuth = useCheckAuth();
-    useEffect(() => {
-        checkAuth(params).catch(() => {});
-    }, [checkAuth, params]);
+  const checkAuth = useCheckAuth();
+  useEffect(() => {
+    checkAuth(params).catch(() => { });
+  }, [checkAuth, params]);
 };

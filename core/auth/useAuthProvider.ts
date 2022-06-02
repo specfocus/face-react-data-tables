@@ -4,8 +4,8 @@ import { AuthProvider } from '../types';
 import AuthContext from './AuthContext';
 
 export const defaultAuthParams = {
-    loginUrl: '/login',
-    afterLoginUrl: '/',
+  loginUrl: '/login',
+  afterLoginUrl: '/',
 };
 
 /**

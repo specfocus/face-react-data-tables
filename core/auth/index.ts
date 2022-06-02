@@ -16,25 +16,25 @@ import convertLegacyAuthProvider from './convertLegacyAuthProvider';
 export * from './types';
 
 export {
-    AuthContext,
-    useAuthProvider,
-    convertLegacyAuthProvider,
-    // low-level hooks for calling a particular verb on the authProvider
-    useLogin,
-    useLogout,
-    useCheckAuth,
-    useGetIdentity,
-    useGetPermissions,
-    // hooks with state management
-    usePermissions,
-    usePermissionsOptimized,
-    useAuthState,
-    // hook with immediate effect
-    useAuthenticated,
-    useLogoutIfAccessDenied,
-    // components
-    Authenticated,
-    WithPermissions,
+  AuthContext,
+  useAuthProvider,
+  convertLegacyAuthProvider,
+  // low-level hooks for calling a particular verb on the authProvider
+  useLogin,
+  useLogout,
+  useCheckAuth,
+  useGetIdentity,
+  useGetPermissions,
+  // hooks with state management
+  usePermissions,
+  usePermissionsOptimized,
+  useAuthState,
+  // hook with immediate effect
+  useAuthenticated,
+  useLogoutIfAccessDenied,
+  // components
+  Authenticated,
+  WithPermissions,
 };
 
 export type { AuthenticatedProps, WithPermissionsProps };

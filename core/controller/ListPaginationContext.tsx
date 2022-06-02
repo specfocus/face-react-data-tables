@@ -27,7 +27,7 @@ import { ListControllerProps } from './useListController';
  *
  * @example
  *
- * import { useListController, ListPaginationContext } from '../../core';
+ * import { useListController, ListPaginationContext } from '../core';
  *
  * const List = props => {
  *     const controllerProps = useListController(props);

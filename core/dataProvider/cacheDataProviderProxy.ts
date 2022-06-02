@@ -14,7 +14,7 @@ const fiveMinutes = 5 * 60 * 1000;
  *
  * @example
  *
- * import { cacheDataProviderProxy } from '../../core';
+ * import { cacheDataProviderProxy } from '../core';
  *
  * const cacheEnabledDataProvider = cacheDataProviderProxy(dataProvider);
  */

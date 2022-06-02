@@ -4,10 +4,10 @@ import useGetPermissions from './useGetPermissions';
 import { useSafeSetState } from '../util/hooks';
 
 interface State<Permissions, Error> {
-    loading: boolean;
-    loaded: boolean;
-    permissions?: Permissions;
-    error?: Error;
+  loading: boolean;
+  loaded: boolean;
+  permissions?: Permissions;
+  error?: Error;
 }
 
 const emptyParams = {};
@@ -43,27 +43,27 @@ const emptyParams = {};
  *     };
  */
 const usePermissions = <Permissions = any, Error = any>(
-    params = emptyParams
+  params = emptyParams
 ): State<Permissions, Error> => {
-    const [state, setState] = useSafeSetState<State<Permissions, Error>>({
-        loading: true,
-        loaded: false,
-    });
-    const getPermissions = useGetPermissions();
-    useEffect(() => {
-        getPermissions(params)
-            .then(permissions => {
-                setState({ loading: false, loaded: true, permissions });
-            })
-            .catch(error => {
-                setState({
-                    loading: false,
-                    loaded: true,
-                    error,
-                });
-            });
-    }, [getPermissions, params, setState]);
-    return state;
+  const [state, setState] = useSafeSetState<State<Permissions, Error>>({
+    loading: true,
+    loaded: false,
+  });
+  const getPermissions = useGetPermissions();
+  useEffect(() => {
+    getPermissions(params)
+      .then(permissions => {
+        setState({ loading: false, loaded: true, permissions });
+      })
+      .catch(error => {
+        setState({
+          loading: false,
+          loaded: true,
+          error,
+        });
+      });
+  }, [getPermissions, params, setState]);
+  return state;
 };
 
 export default usePermissions;

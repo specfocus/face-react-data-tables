@@ -6,11 +6,11 @@ import useAuthenticated from './useAuthenticated';
 import usePermissionsOptimized from './usePermissionsOptimized';
 
 export interface WithPermissionsProps {
-    authParams?: object;
-    component?: ComponentType<any>;
-    location?: Location;
-    staticContext?: object;
-    [key: string]: any;
+  authParams?: object;
+  component?: ComponentType<any>;
+  location?: Location;
+  staticContext?: object;
+  [key: string]: any;
 }
 
 const isEmptyChildren = children => Children.count(children) === 0;
@@ -50,27 +50,27 @@ const isEmptyChildren = children => Children.count(children) === 0;
  *     );
  */
 const WithPermissions: React.FC<WithPermissionsProps> = props => {
-    const {
-        authParams,
-        children,
-        component,
-        staticContext,
-        ...rest
-    } = props;
-    useAuthenticated(authParams);
-    const { permissions } = usePermissionsOptimized(authParams);
-    // render even though the usePermissions() call isn't finished (optimistic rendering)
-    if (component) {
-        return createElement(component, { permissions, ...rest });
-    }
+  const {
+    authParams,
+    children,
+    component,
+    staticContext,
+    ...rest
+  } = props;
+  useAuthenticated(authParams);
+  const { permissions } = usePermissionsOptimized(authParams);
+  // render even though the usePermissions() call isn't finished (optimistic rendering)
+  if (component) {
+    return createElement(component, { permissions, ...rest });
+  }
 
-    warning(
-        (children && !isEmptyChildren(children)) ||
-            (component && children && !isEmptyChildren(children)),
-        'You should only use one of the `component`, `render` and `children` props in <WithPermissions>'
-    );
+  warning(
+    (children && !isEmptyChildren(children)) ||
+    (component && children && !isEmptyChildren(children)),
+    'You should only use one of the `component`, `render` and `children` props in <WithPermissions>'
+  );
 
-    return null;
+  return null;
 };
 
 export default WithPermissions;

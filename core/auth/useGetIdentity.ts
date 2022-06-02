@@ -4,8 +4,8 @@ import { UserIdentity } from '../types';
 import { useSafeSetState } from '../util/hooks';
 
 const defaultIdentity = {
-    id: '',
-    fullName: null,
+  id: '',
+  fullName: null,
 };
 
 /**
@@ -39,48 +39,48 @@ const defaultIdentity = {
  * }
  */
 const useGetIdentity = () => {
-    const [state, setState] = useSafeSetState<State>({
-        loading: true,
-        loaded: false,
-    });
-    const authProvider = useAuthProvider();
-    useEffect(() => {
-        if (authProvider && typeof authProvider.getIdentity === 'function') {
-            const callAuthProvider = async () => {
-                try {
-                    const identity = await authProvider.getIdentity();
-                    setState({
-                        loading: false,
-                        loaded: true,
-                        identity: identity || defaultIdentity,
-                    });
-                } catch (error) {
-                    setState({
-                        loading: false,
-                        loaded: true,
-                        error,
-                    });
-                }
-            };
-            callAuthProvider();
-        } else {
-            // fallback for pre-3.9 authProviders, which had no getIdentity method
-            // FIXME to be removed for the next major
-            setState({
-                loading: false,
-                loaded: true,
-                identity: defaultIdentity,
-            });
+  const [state, setState] = useSafeSetState<State>({
+    loading: true,
+    loaded: false,
+  });
+  const authProvider = useAuthProvider();
+  useEffect(() => {
+    if (authProvider && typeof authProvider.getIdentity === 'function') {
+      const callAuthProvider = async () => {
+        try {
+          const identity = await authProvider.getIdentity();
+          setState({
+            loading: false,
+            loaded: true,
+            identity: identity || defaultIdentity,
+          });
+        } catch (error) {
+          setState({
+            loading: false,
+            loaded: true,
+            error,
+          });
         }
-    }, [authProvider, setState]);
-    return state;
+      };
+      callAuthProvider();
+    } else {
+      // fallback for pre-3.9 authProviders, which had no getIdentity method
+      // FIXME to be removed for the next major
+      setState({
+        loading: false,
+        loaded: true,
+        identity: defaultIdentity,
+      });
+    }
+  }, [authProvider, setState]);
+  return state;
 };
 
 interface State {
-    loading: boolean;
-    loaded: boolean;
-    identity?: UserIdentity;
-    error?: any;
+  loading: boolean;
+  loaded: boolean;
+  identity?: UserIdentity;
+  error?: any;
 }
 
 export default useGetIdentity;

@@ -29,38 +29,38 @@ import { resetNotification } from '../actions/notificationActions';
  * }
  */
 const useLogin = (): Login => {
-    const authProvider = useAuthProvider();
-    const location = useLocation();
-    const locationState = location.state as any;
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const nextPathName = locationState && locationState.nextPathname;
-    const nextSearch = locationState && locationState.nextSearch;
+  const authProvider = useAuthProvider();
+  const location = useLocation();
+  const locationState = location.state as any;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const nextPathName = locationState && locationState.nextPathname;
+  const nextSearch = locationState && locationState.nextSearch;
 
-    const login = useCallback(
-        (params: any = {}, pathName) =>
-            authProvider.login(params).then(ret => {
-                dispatch(resetNotification());
-                const redirectUrl = pathName
-                    ? pathName
-                    : nextPathName + nextSearch ||
-                      defaultAuthParams.afterLoginUrl;
-                navigate(redirectUrl);
-                return ret;
-            }),
-        [authProvider, history, nextPathName, nextSearch, dispatch]
-    );
+  const login = useCallback(
+    (params: any = {}, pathName) =>
+      authProvider.login(params).then(ret => {
+        dispatch(resetNotification());
+        const redirectUrl = pathName
+          ? pathName
+          : nextPathName + nextSearch ||
+          defaultAuthParams.afterLoginUrl;
+        navigate(redirectUrl);
+        return ret;
+      }),
+    [authProvider, history, nextPathName, nextSearch, dispatch]
+  );
 
-    const loginWithoutProvider = useCallback(
-        (_, __) => {
-            dispatch(resetNotification());
-            navigate(defaultAuthParams.afterLoginUrl);
-            return Promise.resolve();
-        },
-        [history, dispatch]
-    );
+  const loginWithoutProvider = useCallback(
+    (_, __) => {
+      dispatch(resetNotification());
+      navigate(defaultAuthParams.afterLoginUrl);
+      return Promise.resolve();
+    },
+    [history, dispatch]
+  );
 
-    return authProvider ? login : loginWithoutProvider;
+  return authProvider ? login : loginWithoutProvider;
 };
 
 /**

@@ -3,7 +3,7 @@ import { render, act, fireEvent, waitFor } from '@testing-library/react';
 import expect from 'expect';
 
 import Query from './Query';
-import { CoreAdmin, Resource } from '../../core';
+import { CoreAdmin, Resource } from '../core';
 import { renderWithRedux, TestContext } from '../../test';
 import DataProviderContext from './DataProviderContext';
 import { showNotification, refreshView, setListSelectedIds } from '../actions';

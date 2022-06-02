@@ -24,79 +24,79 @@ import { Path, useLocation, useNavigate } from 'react-router-dom';
  * }
  */
 const useLogout = (): Logout => {
-    const authProvider = useAuthProvider();
-    const dispatch = useDispatch();
+  const authProvider = useAuthProvider();
+  const dispatch = useDispatch();
 
-    /**
-     * We need the current location to pass in the router state
-     * so that the login hook knows where to redirect to as next route after login.
-     *
-     * But if we used useLocation to get it, the logout function
-     * would be rebuilt each time the user changes location. Consequently, that
-     * would force a rerender of all components using this hook upon navigation
-     * (BaseAppRouter for example).
-     *
-     * To avoid that, we read the location directly from history which is mutable.
-     * See: https://reacttraining.com/react-router/web/api/history/history-is-mutable
-     */
-    const location = useLocation();
-    const navigate = useNavigate();
+  /**
+   * We need the current location to pass in the router state
+   * so that the login hook knows where to redirect to as next route after login.
+   *
+   * But if we used useLocation to get it, the logout function
+   * would be rebuilt each time the user changes location. Consequently, that
+   * would force a rerender of all components using this hook upon navigation
+   * (BaseAppRouter for example).
+   *
+   * To avoid that, we read the location directly from history which is mutable.
+   * See: https://reacttraining.com/react-router/web/api/history/history-is-mutable
+   */
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const logout = useCallback(
-        (
-            params = {},
-            redirectTo = defaultAuthParams.loginUrl,
-            redirectToCurrentLocationAfterLogin = true
-        ) =>
-            authProvider.logout(params).then(redirectToFromProvider => {
-                dispatch(clearState());
-                if (redirectToFromProvider === false) {
-                    // do not redirect
-                    return;
-                }
-                // redirectTo can contain a query string, e.g. '/login?foo=bar'
-                // we must split the redirectTo to pass a structured location to navigate()
-                const redirectToParts = (
-                    redirectToFromProvider || redirectTo
-                ).split('?');
-                const newLocation: Partial<Path> = {
-                    pathname: redirectToParts[0],
-                };
-                let state: any = {}
-                if (
-                    redirectToCurrentLocationAfterLogin &&
-                    location.pathname
-                ) {
-                    state = {
-                        nextPathname: location.pathname,
-                        nextSearch: location.search,
-                    };
-                }
-                if (redirectToParts[1]) {
-                    newLocation.search = redirectToParts[1];
-                }
-                navigate(newLocation, state);
-                return redirectToFromProvider;
-            }),
-        [authProvider, history, dispatch]
-    );
+  const logout = useCallback(
+    (
+      params = {},
+      redirectTo = defaultAuthParams.loginUrl,
+      redirectToCurrentLocationAfterLogin = true
+    ) =>
+      authProvider.logout(params).then(redirectToFromProvider => {
+        dispatch(clearState());
+        if (redirectToFromProvider === false) {
+          // do not redirect
+          return;
+        }
+        // redirectTo can contain a query string, e.g. '/login?foo=bar'
+        // we must split the redirectTo to pass a structured location to navigate()
+        const redirectToParts = (
+          redirectToFromProvider || redirectTo
+        ).split('?');
+        const newLocation: Partial<Path> = {
+          pathname: redirectToParts[0],
+        };
+        let state: any = {};
+        if (
+          redirectToCurrentLocationAfterLogin &&
+          location.pathname
+        ) {
+          state = {
+            nextPathname: location.pathname,
+            nextSearch: location.search,
+          };
+        }
+        if (redirectToParts[1]) {
+          newLocation.search = redirectToParts[1];
+        }
+        navigate(newLocation, state);
+        return redirectToFromProvider;
+      }),
+    [authProvider, history, dispatch]
+  );
 
-    const logoutWithoutProvider = useCallback(
-        _ => {
-            navigate({
-                pathname: defaultAuthParams.loginUrl,
-            }, {
-                state: {
-                    nextPathname: location.pathname,
-                }
-            });
-            dispatch(clearState());
-            return Promise.resolve();
-        },
-        [dispatch, history]
-    );
+  const logoutWithoutProvider = useCallback(
+    _ => {
+      navigate({
+        pathname: defaultAuthParams.loginUrl,
+      }, {
+        state: {
+          nextPathname: location.pathname,
+        }
+      });
+      dispatch(clearState());
+      return Promise.resolve();
+    },
+    [dispatch, history]
+  );
 
-    return authProvider ? logout : logoutWithoutProvider;
+  return authProvider ? logout : logoutWithoutProvider;
 };
 
 /**
@@ -110,9 +110,9 @@ const useLogout = (): Logout => {
  * @return {Promise} The authProvider response
  */
 type Logout = (
-    params?: any,
-    redirectTo?: string,
-    redirectToCurrentLocationAfterLogin?: boolean
+  params?: any,
+  redirectTo?: string,
+  redirectToCurrentLocationAfterLogin?: boolean
 ) => Promise<any>;
 
 export default useLogout;

@@ -3,7 +3,7 @@ import { render, fireEvent, waitFor } from '@testing-library/react';
 import expect from 'expect';
 
 import Mutation from './Mutation';
-import { CoreAdmin, Resource } from '../../core';
+import { CoreAdmin, Resource } from '../core';
 import { renderWithRedux } from '../../test';
 import { DataProviderContext } from '.';
 

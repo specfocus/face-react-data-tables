@@ -36,13 +36,13 @@ const getPermissionsWithoutProvider = () => Promise.resolve([]);
  * }
  */
 const useGetPermissions = (): GetPermissions => {
-    const authProvider = useAuthProvider();
-    const getPermissions = useCallback(
-        (params: any = {}) => authProvider.getPermissions(params),
-        [authProvider]
-    );
+  const authProvider = useAuthProvider();
+  const getPermissions = useCallback(
+    (params: any = {}) => authProvider.getPermissions(params),
+    [authProvider]
+  );
 
-    return authProvider ? getPermissions : getPermissionsWithoutProvider;
+  return authProvider ? getPermissions : getPermissionsWithoutProvider;
 };
 
 /**

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { fireEvent } from '@testing-library/react';
-import { ListContextProvider } from '../../core';
+import { ListContextProvider } from '../core';
 import { renderWithRedux } from '../../test';
 import DataView from './DataView';
 

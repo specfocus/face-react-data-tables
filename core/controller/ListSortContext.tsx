@@ -23,7 +23,7 @@ import { ListControllerProps } from './useListController';
  *
  * @example
  *
- * import { useListController, usePickSortContext, ListSortContext } from '../../core';
+ * import { useListController, usePickSortContext, ListSortContext } from '../core';
  *
  * const List = props => {
  *     const controllerProps = useListController(props);

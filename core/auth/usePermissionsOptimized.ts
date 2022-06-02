@@ -5,8 +5,8 @@ import useGetPermissions from './useGetPermissions';
 import { useSafeSetState } from '../util/hooks';
 
 interface State {
-    permissions?: any;
-    error?: any;
+  permissions?: any;
+  error?: any;
 }
 
 const emptyParams = {};
@@ -53,27 +53,27 @@ const alreadyFetchedPermissions = { '{}': undefined };
  *     };
  */
 const usePermissionsOptimized = (params = emptyParams) => {
-    const key = JSON.stringify(params);
-    const [state, setState] = useSafeSetState<State>({
-        permissions: alreadyFetchedPermissions[key],
-    });
-    const getPermissions = useGetPermissions();
-    useEffect(() => {
-        getPermissions(params)
-            .then(permissions => {
-                if (!isEqual(permissions, state.permissions)) {
-                    alreadyFetchedPermissions[key] = permissions;
-                    setState({ permissions });
-                }
-            })
-            .catch(error => {
-                setState({
-                    error,
-                });
-            });
-    }, [getPermissions, key]); // eslint-disable-line react-hooks/exhaustive-deps
+  const key = JSON.stringify(params);
+  const [state, setState] = useSafeSetState<State>({
+    permissions: alreadyFetchedPermissions[key],
+  });
+  const getPermissions = useGetPermissions();
+  useEffect(() => {
+    getPermissions(params)
+      .then(permissions => {
+        if (!isEqual(permissions, state.permissions)) {
+          alreadyFetchedPermissions[key] = permissions;
+          setState({ permissions });
+        }
+      })
+      .catch(error => {
+        setState({
+          error,
+        });
+      });
+  }, [getPermissions, key]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    return state;
+  return state;
 };
 
 export default usePermissionsOptimized;

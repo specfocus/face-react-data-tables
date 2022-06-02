@@ -9,7 +9,7 @@ import { Record } from '../types';
  *
  * @example
  *
- * import { useEditController, EditContext } from '../../core';
+ * import { useEditController, EditContext } from '../core';
  *
  * const Edit = props => {
  *     const { record } = useEditController(props);
@@ -49,7 +49,7 @@ export interface RecordContextOptions<RecordType> {
  *
  * @example // basic usage
  *
- * import { useRecordContext } from '../../core';
+ * import { useRecordContext } from '../core';
  *
  * const TitleField = () => {
  *     const record = useRecordContext();
@@ -58,7 +58,7 @@ export interface RecordContextOptions<RecordType> {
  *
  * @example // allow record override via props
  *
- * import { useRecordContext } from '../../core';
+ * import { useRecordContext } from '../core';
  *
  * const TitleField = (props) => {
  *     const record = useRecordContext(props);

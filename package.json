@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@specfocus/json-focus": "^0.0.1",
+    "@specfocus/main-focus": "^0.0.1",
     "@specfocus/quiz-focus": "^0.0.1"
   },
   "devDependencies": {

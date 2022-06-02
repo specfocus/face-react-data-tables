@@ -20,7 +20,7 @@ import {
   Record,
   RecordMap,
   SortPayload,
-} from '../../core';
+} from '../core';
 import { Table, TableProps } from '@mui/material';
 import classnames from 'classnames';
 import union from 'lodash/union';
