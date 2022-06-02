@@ -2,7 +2,7 @@ import { ThemeOptions } from '@mui/material';
 import { History } from 'history';
 import { ComponentType, ReactElement, ReactNode } from 'react';
 import { Location, PathMatch, RouteProps } from 'react-router';
-import { AuthActionType } from './auth/types';
+import { AuthActionType } from '../auth/types';
 
 /**
  * data types
