@@ -1,12 +1,10 @@
-import * as React from 'react';
 import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { matchPath, Route, RouteProps, Routes, useParams } from 'react-router-dom';
-
-import WithPermissions from '../../auth/WithPermissions';
-import { registerResource, unregisterResource } from '../../actions';
-import { ResourceProps, ResourceMatch, ReduxState } from '../types';
+import { Route, RouteProps, Routes, useParams } from 'react-router-dom';
+import { registerResource, unregisterResource } from '../actions';
+import WithPermissions from '../auth/WithPermissions';
 import { ResourceContextProvider } from './ResourceContextProvider';
+import { ReduxState, ResourceProps } from './types';
 
 const defaultOptions = {};
 

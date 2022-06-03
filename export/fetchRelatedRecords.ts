@@ -1,4 +1,4 @@
-import { Record, Identifier, DataProviderProxy } from '../types';
+import { Record, Identifier, DataProviderProxy } from '../core/types';
 
 /**
  * Helper function for calling the dataProvider.getMany() method,

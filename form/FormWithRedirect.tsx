@@ -13,7 +13,7 @@ import {
     Record as RaRecord,
     OnSuccess,
     OnFailure,
-} from '../types';
+} from './types';
 import { RedirectionSideEffect } from '../sideEffect';
 import { useDispatch } from 'react-redux';
 import { setAutomaticRefresh } from '../../actions/uiActions';

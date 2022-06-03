@@ -1,4 +1,4 @@
-import { Identifier } from '../../core_/types';
+import { Identifier } from '../../core/types';
 import { UPDATE_MANY } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
 import { NotificationSideEffect, RefreshSideEffect } from '../../core_/sideEffect';

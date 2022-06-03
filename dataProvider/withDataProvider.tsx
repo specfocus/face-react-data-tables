@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DataProvider } from '../types';
+import { DataProvider } from './types';
 
 import useDataProviderWithDeclarativeSideEffects from './useDataProviderWithDeclarativeSideEffects';
 

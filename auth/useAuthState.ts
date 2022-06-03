@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-
+import { useSafeSetState } from '../util/hooks';
 import useCheckAuth from './useCheckAuth';
-import { useSafeSetState } from '../core_/util/hooks';
 
 interface State {
   loading: boolean;

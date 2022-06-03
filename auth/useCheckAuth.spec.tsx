@@ -1,14 +1,12 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import expect from 'expect';
 import { render, waitFor } from '@testing-library/react';
-
-import useCheckAuth from './useCheckAuth';
+import expect from 'expect';
+import { useEffect, useState } from 'react';
+import useNotify from '../sideEffect/useNotify';
 import AuthContext from './AuthContext';
-import useLogout from './useLogout';
-import useNotify from '../core_/sideEffect/useNotify';
-import { AuthProvider } from '../core_/types';
+import { AuthProvider } from './types';
 import { defaultAuthParams } from './useAuthProvider';
+import useCheckAuth from './useCheckAuth';
+import useLogout from './useLogout';
 
 jest.mock('./useLogout');
 jest.mock('../sideEffect/useNotify');

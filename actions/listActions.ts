@@ -1,4 +1,4 @@
-import { Identifier } from '../core_/types';
+import { Identifier } from '../core/types';
 
 export const CRUD_CHANGE_LIST_PARAMS = 'CRUD_CHANGE_LIST_PARAMS';
 

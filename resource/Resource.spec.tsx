@@ -1,13 +1,11 @@
-import * as React from 'react';
-import expect from 'expect';
 import { waitFor } from '@testing-library/react';
-import { Router } from 'react-router-dom';
+import expect from 'expect';
 import { createMemoryHistory } from 'history';
-
-import Resource from './Resource';
+import { Router } from 'react-router-dom';
 import { registerResource, unregisterResource } from '../actions';
-import { renderWithRedux } from '../../test';
 import AuthContext from '../auth/AuthContext';
+import { renderWithRedux } from '../test';
+import Resource from './Resource';
 
 const PostList = () => <div>PostList</div>;
 const PostEdit = () => <div>PostEdit</div>;

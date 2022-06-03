@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { AuthProvider, UserIdentity } from '../core_/types';
+import { AuthProvider, UserIdentity } from '../core/types';
 
 const defaultIdentity: UserIdentity = { id: '' };
 

@@ -1,15 +1,13 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import expect from 'expect';
 import { render, waitFor } from '@testing-library/react';
-import { Router } from 'react-router-dom';
+import expect from 'expect';
 import { createMemoryHistory } from 'history';
-
-import useLogoutIfAccessDenied from './useLogoutIfAccessDenied';
+import { useEffect, useState } from 'react';
+import { Router } from 'react-router-dom';
+import useNotify from '../sideEffect/useNotify';
 import AuthContext from './AuthContext';
+import { AuthProvider } from './types';
 import useLogout from './useLogout';
-import useNotify from '../core_/sideEffect/useNotify';
-import { AuthProvider } from '../core_/types';
+import useLogoutIfAccessDenied from './useLogoutIfAccessDenied';
 
 let loggedIn = true;
 

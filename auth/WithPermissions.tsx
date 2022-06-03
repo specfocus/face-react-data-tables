@@ -1,7 +1,6 @@
-import { Children, ReactElement, ComponentType, createElement } from 'react';
 import { Location } from 'history';
-
-import warning from '../core_/util/warning';
+import { Children, ComponentType, createElement } from 'react';
+import warning from '../util/warning';
 import useAuthenticated from './useAuthenticated';
 import usePermissionsOptimized from './usePermissionsOptimized';
 

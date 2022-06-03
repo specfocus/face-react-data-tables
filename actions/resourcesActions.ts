@@ -1,4 +1,4 @@
-import { ResourceDefinition } from '../core_/types';
+import { ResourceDefinition } from '../core/types';
 
 export const REGISTER_RESOURCE = 'REGISTER_RESOURCE';
 

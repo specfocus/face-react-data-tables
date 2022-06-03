@@ -4,8 +4,9 @@ import { useDispatch, useSelector, useStore } from 'react-redux';
 
 import DataProviderContext from './DataProviderContext';
 import defaultDataProvider from './defaultDataProvider';
-import { ReduxState, DataProviderProxy } from '../types';
-import useLogoutIfAccessDenied from '../../auth/useLogoutIfAccessDenied';
+import {DataProviderProxy } from './types';
+import { ReduxState } from '../core/types';
+import useLogoutIfAccessDenied from '../auth/useLogoutIfAccessDenied';
 import { getDataProviderCallArguments } from './getDataProviderCallArguments';
 import {
     doQuery,

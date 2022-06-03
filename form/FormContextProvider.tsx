@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
-import { FormContextValue } from '../types';
+import { FormContextValue } from './types';
 import { FormContext } from './FormContext';
 
 /**

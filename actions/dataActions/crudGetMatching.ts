@@ -1,4 +1,4 @@
-import { Record, PaginationPayload, SortPayload } from '../../core_/types';
+import { Record, PaginationPayload, SortPayload } from '../../core/types';
 import { GET_LIST } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
 import { NotificationSideEffect } from '../../core_/sideEffect';

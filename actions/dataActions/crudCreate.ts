@@ -1,4 +1,4 @@
-import { Record } from '../../core_/types';
+import { Record } from '../../core/types';
 import { CREATE } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
 import {

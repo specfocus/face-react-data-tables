@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import useAuthProvider from './useAuthProvider';
-import { UserIdentity } from '../core_/types';
-import { useSafeSetState } from '../core_/util/hooks';
+import { UserIdentity } from './types';
+import { useSafeSetState } from '../util/hooks';
 
 const defaultIdentity = {
   id: '',

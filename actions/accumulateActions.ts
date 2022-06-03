@@ -1,5 +1,5 @@
 import { crudGetMany, crudGetMatching } from './dataActions';
-import { PaginationPayload, SortPayload, Identifier } from '../core_/types';
+import { PaginationPayload, SortPayload, Identifier } from '../core/types';
 
 export const CRUD_GET_MANY_ACCUMULATE = 'CRUD_GET_MANY_ACCUMULATE';
 

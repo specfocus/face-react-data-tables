@@ -3,7 +3,7 @@ import {
   Record,
   PaginationPayload,
   SortPayload,
-} from '../../core_/types';
+} from '../../core/types';
 import { GET_MANY_REFERENCE } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
 import { NotificationSideEffect } from '../../core_/sideEffect';

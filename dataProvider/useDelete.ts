@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { Identifier, Record } from '../types';
+import { Identifier, Record } from '../core/types';
 import useMutation, { MutationOptions, Mutation } from './useMutation';
 
 /**

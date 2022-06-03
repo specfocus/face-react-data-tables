@@ -6,7 +6,7 @@ import {
     NotificationSideEffect,
     RedirectionSideEffect,
 } from '../sideEffect';
-import { OnSuccess, OnFailure } from '../types';
+import { OnSuccess, OnFailure } from './types';
 import { useMemo } from 'react';
 
 const defaultSideEffects = {

@@ -1,7 +1,6 @@
 import { useContext } from 'react';
-
-import { AuthProvider } from '../core_/types';
 import AuthContext from './AuthContext';
+import { AuthProvider } from './types';
 
 export const defaultAuthParams = {
   loginUrl: '/login',

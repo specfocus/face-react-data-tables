@@ -6,7 +6,7 @@ import {
     GetOneResult,
     GetManyParams,
     GetManyResult,
-} from '../types';
+} from './types';
 
 export const canReplyWithCache = (type, payload, resourceState) => {
     const now = new Date();

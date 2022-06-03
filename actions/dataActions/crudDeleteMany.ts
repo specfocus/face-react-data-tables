@@ -1,4 +1,4 @@
-import { Identifier, Record } from '../../core_/types';
+import { Identifier, Record } from '../../core/types';
 import { DELETE_MANY } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
 import { NotificationSideEffect, RefreshSideEffect } from '../../core_/sideEffect';
