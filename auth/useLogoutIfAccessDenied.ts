@@ -71,12 +71,12 @@ const useLogoutIfAccessDenied = (): LogoutIfAccessDenied => {
               .then(() => {
                 if (logoutUser) {
                   notify(
-                    'ra.notification.logged_out',
+                    'notification.logged_out',
                     'warning'
                   );
                 } else {
                   notify(
-                    'ra.notification.not_authorized',
+                    'notification.not_authorized',
                     'warning'
                   );
                 }

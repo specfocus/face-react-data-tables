@@ -5,7 +5,7 @@ import {
   NotificationSideEffect,
   RedirectionSideEffect,
   RefreshSideEffect,
-} from '../../core_/sideEffect';
+} from '../../sideEffect';
 
 export const crudDelete = (
   resource: string,
@@ -22,7 +22,7 @@ export const crudDelete = (
     fetch: DELETE,
     onSuccess: {
       notification: {
-        body: 'ra.notification.deleted',
+        body: 'notification.deleted',
         level: 'info',
         messageArgs: {
           smart_count: 1,
@@ -34,7 +34,7 @@ export const crudDelete = (
     },
     onFailure: {
       notification: {
-        body: 'ra.notification.http_error',
+        body: 'notification.http_error',
         level: 'warning',
       },
     },

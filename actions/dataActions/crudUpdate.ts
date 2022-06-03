@@ -5,7 +5,7 @@ import {
   NotificationSideEffect,
   RedirectionSideEffect,
   RefreshSideEffect,
-} from '../../core_/sideEffect';
+} from '../../sideEffect';
 
 export const crudUpdate = (
   resource: string,
@@ -23,7 +23,7 @@ export const crudUpdate = (
     fetch: UPDATE,
     onSuccess: {
       notification: {
-        body: 'ra.notification.updated',
+        body: 'notification.updated',
         level: 'info',
         messageArgs: {
           smart_count: 1,
@@ -35,7 +35,7 @@ export const crudUpdate = (
     },
     onFailure: {
       notification: {
-        body: 'ra.notification.http_error',
+        body: 'notification.http_error',
         level: 'warning',
       },
     },

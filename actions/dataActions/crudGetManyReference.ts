@@ -6,7 +6,7 @@ import {
 } from '../../core/types';
 import { GET_MANY_REFERENCE } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
-import { NotificationSideEffect } from '../../core_/sideEffect';
+import { NotificationSideEffect } from '../../sideEffect';
 
 export const crudGetManyReference = (
   reference: string,
@@ -26,7 +26,7 @@ export const crudGetManyReference = (
     fetch: GET_MANY_REFERENCE,
     onFailure: {
       notification: {
-        body: 'ra.notification.http_error',
+        body: 'notification.http_error',
         level: 'warning',
       },
     },

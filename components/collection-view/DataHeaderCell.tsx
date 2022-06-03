@@ -56,7 +56,7 @@ export const DataHeaderCell = (
         field.props.sortable !== false &&
         (field.props.sortBy || field.props.source) ? (
         <Tooltip
-          title={translate('ra.action.sort')}
+          title={translate('action.sort')}
           placement={
             field.props.textAlign === 'right'
               ? 'bottom-end'

@@ -169,7 +169,7 @@ describe('Validators', () => {
                     asyncSuccessfullValidator,
                 ]),
                 [''],
-                'ra.validation.required'
+                'validation.required'
             );
             await test(
                 composeValidators([
@@ -178,7 +178,7 @@ describe('Validators', () => {
                     minLength(5),
                 ]),
                 ['abcd'],
-                'ra.validation.minLength'
+                'validation.minLength'
             );
             await test(
                 composeValidators([
@@ -208,7 +208,7 @@ describe('Validators', () => {
                     asyncSuccessfullValidator
                 ),
                 [''],
-                'ra.validation.required'
+                'validation.required'
             );
             await test(
                 composeValidators(
@@ -217,7 +217,7 @@ describe('Validators', () => {
                     minLength(5)
                 ),
                 ['abcd'],
-                'ra.validation.minLength'
+                'validation.minLength'
             );
             await test(
                 composeValidators(
@@ -248,18 +248,18 @@ describe('Validators', () => {
             test(
                 required(),
                 [undefined, '', null, []],
-                'ra.validation.required'
+                'validation.required'
             );
         });
         it('should have a `isRequired` prop for allowing the UI to add a required marker', () => {
             expect(required().isRequired).toEqual(true);
         });
         it('should allow message to be a callback', () => {
-            const message = jest.fn(() => 'ra.validation.required');
+            const message = jest.fn(() => 'validation.required');
             test(
                 required(message),
                 [undefined, '', null, []],
-                'ra.validation.required'
+                'validation.required'
             );
             expect(message).toHaveBeenCalledTimes(4);
             expect(message).toHaveBeenLastCalledWith({
@@ -280,14 +280,14 @@ describe('Validators', () => {
             test(minLength(5), ['12345', '123456'], undefined);
         });
         it('should return an error message if the value has smaller length than the given minimum', () => {
-            test(minLength(5), ['1234', '12'], 'ra.validation.minLength');
+            test(minLength(5), ['1234', '12'], 'validation.minLength');
         });
         it('should allow message to be a callback', () => {
-            const message = jest.fn(() => 'ra.validation.minLength');
+            const message = jest.fn(() => 'validation.minLength');
             test(
                 minLength(5, message),
                 ['1234', '12'],
-                'ra.validation.minLength'
+                'validation.minLength'
             );
             expect(message).toHaveBeenCalledTimes(2);
             expect(message).toHaveBeenLastCalledWith({
@@ -308,14 +308,14 @@ describe('Validators', () => {
             test(maxLength(5), ['12345', '123'], undefined);
         });
         it('should return an error message if the value has higher length than the given maximum', () => {
-            test(maxLength(10), ['12345678901'], 'ra.validation.maxLength');
+            test(maxLength(10), ['12345678901'], 'validation.maxLength');
         });
         it('should allow message to be a callback', () => {
-            const message = jest.fn(() => 'ra.validation.maxLength');
+            const message = jest.fn(() => 'validation.maxLength');
             test(
                 maxLength(10, message),
                 ['12345678901'],
-                'ra.validation.maxLength'
+                'validation.maxLength'
             );
             expect(message).toHaveBeenCalledTimes(1);
             expect(message).toHaveBeenLastCalledWith({
@@ -333,14 +333,14 @@ describe('Validators', () => {
             test(minValue(5), [5, 10, 5.5, '10'], undefined);
         });
         it('should return an error message if the value is lower than the given minimum', () => {
-            test(minValue(10), [1, 9.5, '5'], 'ra.validation.minValue');
+            test(minValue(10), [1, 9.5, '5'], 'validation.minValue');
         });
         it('should return an error message if the value is 0', () => {
-            test(minValue(10), [0], 'ra.validation.minValue');
+            test(minValue(10), [0], 'validation.minValue');
         });
         it('should allow message to be a callback', () => {
-            const message = jest.fn(() => 'ra.validation.minValue');
-            test(minValue(10, message), [0], 'ra.validation.minValue');
+            const message = jest.fn(() => 'validation.minValue');
+            test(minValue(10, message), [0], 'validation.minValue');
             expect(message).toHaveBeenCalledTimes(1);
             expect(message).toHaveBeenLastCalledWith({
                 args: { min: 10 },
@@ -357,17 +357,17 @@ describe('Validators', () => {
             test(maxValue(5), [5, 4, 4.5, '4'], undefined);
         });
         it('should return an error message if the value is higher than the given maximum', () => {
-            test(maxValue(10), [11, 10.5, '11'], 'ra.validation.maxValue');
+            test(maxValue(10), [11, 10.5, '11'], 'validation.maxValue');
         });
         it('should return undefined if the value is 0', () => {
             test(maxValue(10), [0], undefined);
         });
         it('should allow message to be a callback', () => {
-            const message = jest.fn(() => 'ra.validation.maxValue');
+            const message = jest.fn(() => 'validation.maxValue');
             test(
                 maxValue(10, message),
                 [11, 10.5, '11'],
-                'ra.validation.maxValue'
+                'validation.maxValue'
             );
             expect(message).toHaveBeenCalledTimes(3);
             expect(message).toHaveBeenLastCalledWith({
@@ -385,11 +385,11 @@ describe('Validators', () => {
             test(number(), [123, '123', new Date(), 0, 2.5, -5], undefined);
         });
         it('should return an error message if the value is not a number', () => {
-            test(number(), ['foo'], 'ra.validation.number');
+            test(number(), ['foo'], 'validation.number');
         });
         it('should allow message to be a callback', () => {
-            const message = jest.fn(() => 'ra.validation.number');
-            test(number(message), ['foo'], 'ra.validation.number');
+            const message = jest.fn(() => 'validation.number');
+            test(number(message), ['foo'], 'validation.number');
             expect(message).toHaveBeenCalledTimes(1);
             expect(message).toHaveBeenLastCalledWith({
                 args: undefined,
@@ -453,7 +453,7 @@ describe('Validators', () => {
             );
         });
         it('should return an error if the value is not a valid email', () => {
-            test(email(), ['foo@bar', 'hello, world'], 'ra.validation.email');
+            test(email(), ['foo@bar', 'hello, world'], 'validation.email');
         });
     });
     describe('choices', () => {

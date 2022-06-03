@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { setListSelectedIds } from '../../actions';
+import { setListSelectedIds } from '../actions';
 import { warning } from '../util';
 
 /**

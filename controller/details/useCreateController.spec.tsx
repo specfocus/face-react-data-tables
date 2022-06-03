@@ -126,7 +126,7 @@ describe('useCreateController', () => {
                 undoable: false,
                 autoHideDuration: undefined,
                 type: 'info',
-                message: 'ra.notification.created',
+                message: 'notification.created',
             },
         });
     });

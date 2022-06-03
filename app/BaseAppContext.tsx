@@ -5,7 +5,7 @@ import { History } from 'history';
 import { createBrowserHistory } from 'history';
 // import { ConnectedRouter } from 'connected-react-router';
 
-import { AuthContext, convertLegacyAuthProvider } from '../../auth';
+import { AuthContext, convertLegacyAuthProvider } from '../auth';
 import {
     DataProviderContext,
     convertLegacyDataProvider,

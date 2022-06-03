@@ -120,7 +120,7 @@ describe('<ReferenceArrayInputController />', () => {
       }
     );
 
-    expect(queryByText('ra.input.references.all_missing')).not.toBeNull();
+    expect(queryByText('input.references.all_missing')).not.toBeNull();
   });
 
   it('should set error in case of references fetch error and there are no data found for the references already selected', () => {
@@ -148,7 +148,7 @@ describe('<ReferenceArrayInputController />', () => {
         },
       }
     );
-    expect(queryByText('ra.input.references.all_missing')).not.toBeNull();
+    expect(queryByText('input.references.all_missing')).not.toBeNull();
   });
 
   it('should not display an error in case of references fetch error but data from at least one selected reference was found', () => {
@@ -187,7 +187,7 @@ describe('<ReferenceArrayInputController />', () => {
         },
       }
     );
-    expect(queryByText('ra.input.references.all_missing')).toBeNull();
+    expect(queryByText('input.references.all_missing')).toBeNull();
   });
 
   it('should set warning if references fetch fails but selected references are not empty', async () => {
@@ -231,7 +231,7 @@ describe('<ReferenceArrayInputController />', () => {
     );
     await waitFor(() => {
       expect(
-        queryByText('ra.input.references.many_missing')
+        queryByText('input.references.many_missing')
       ).not.toBeNull();
     });
   });
@@ -277,7 +277,7 @@ describe('<ReferenceArrayInputController />', () => {
     );
     await waitFor(() => {
       expect(
-        queryByText('ra.input.references.many_missing')
+        queryByText('input.references.many_missing')
       ).not.toBeNull();
     });
   });
@@ -310,7 +310,7 @@ describe('<ReferenceArrayInputController />', () => {
         },
       }
     );
-    expect(queryByText('ra.input.references.many_missing')).not.toBeNull();
+    expect(queryByText('input.references.many_missing')).not.toBeNull();
   });
 
   it('should not set warning if all references were found', async () => {
@@ -353,7 +353,7 @@ describe('<ReferenceArrayInputController />', () => {
       }
     );
     await waitFor(() => {
-      expect(queryByText('ra.input.references.many_missing')).toBeNull();
+      expect(queryByText('input.references.many_missing')).toBeNull();
     });
   });
 

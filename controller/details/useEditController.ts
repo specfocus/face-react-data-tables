@@ -144,7 +144,7 @@ export const useEditController = <RecordType extends Record = Record>(
         {
             action: CRUD_GET_ONE,
             onFailure: () => {
-                notify('ra.notification.item_doesnt_exist', 'warning');
+                notify('notification.item_doesnt_exist', 'warning');
                 redirect('list', basePath);
                 refresh();
             },
@@ -152,7 +152,7 @@ export const useEditController = <RecordType extends Record = Record>(
     );
 
     const getResourceLabel = useGetResourceLabel();
-    const defaultTitle = translate('ra.page.edit', {
+    const defaultTitle = translate('page.edit', {
         name: getResourceLabel(resource, 1),
         id,
         record,
@@ -193,7 +193,7 @@ export const useEditController = <RecordType extends Record = Record>(
                             : () => {
                                   notify(
                                       successMessage ||
-                                          'ra.notification.updated',
+                                          'notification.updated',
                                       'info',
                                       {
                                           smart_count: 1,
@@ -211,7 +211,7 @@ export const useEditController = <RecordType extends Record = Record>(
                                       typeof error === 'string'
                                           ? error
                                           : error.message ||
-                                                'ra.notification.http_error',
+                                                'notification.http_error',
                                       'warning',
                                       {
                                           _:

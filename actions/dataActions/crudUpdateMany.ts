@@ -1,7 +1,7 @@
 import { Identifier } from '../../core/types';
 import { UPDATE_MANY } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
-import { NotificationSideEffect, RefreshSideEffect } from '../../core_/sideEffect';
+import { NotificationSideEffect, RefreshSideEffect } from '../../sideEffect';
 
 export const crudUpdateMany = (
   resource: string,
@@ -17,7 +17,7 @@ export const crudUpdateMany = (
     fetch: UPDATE_MANY,
     onSuccess: {
       notification: {
-        body: 'ra.notification.updated',
+        body: 'notification.updated',
         level: 'info',
         messageArgs: {
           smart_count: ids.length,
@@ -29,7 +29,7 @@ export const crudUpdateMany = (
     },
     onFailure: {
       notification: {
-        body: 'ra.notification.http_error',
+        body: 'notification.http_error',
         level: 'warning',
       },
     },

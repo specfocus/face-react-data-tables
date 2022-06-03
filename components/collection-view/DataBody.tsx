@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { TableBody, TableBodyProps } from '@mui/material';
 import classnames from 'classnames';
 import { shallowEqual } from 'react-redux';
-import { Identifier, Record, RecordMap } from '../core';
+import { Identifier, Record, RecordMap } from '../../core/types';
 
 import DataRow, { PureDataRow, RowClickFunction } from './DataRow';
 import useDataViewStyles from './useDataViewStyles';

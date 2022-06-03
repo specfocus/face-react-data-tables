@@ -164,7 +164,7 @@ export const useCreateController = <
                             : ({ data: newRecord }) => {
                                   notify(
                                       successMessage ||
-                                          'ra.notification.created',
+                                          'notification.created',
                                       'info',
                                       {
                                           smart_count: 1,
@@ -186,7 +186,7 @@ export const useCreateController = <
                                       typeof error === 'string'
                                           ? error
                                           : error.message ||
-                                                'ra.notification.http_error',
+                                                'notification.http_error',
                                       'warning',
                                       {
                                           _:
@@ -214,7 +214,7 @@ export const useCreateController = <
     );
 
     const getResourceLabel = useGetResourceLabel();
-    const defaultTitle = translate('ra.page.create', {
+    const defaultTitle = translate('page.create', {
         name: getResourceLabel(resource, 1),
     });
 

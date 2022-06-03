@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useResourceContext } from '..';
+import { useResourceContext } from '../resource';
 import { getFieldLabelTranslationArgs } from '../util';
 import { TranslatableContextValue } from './TranslatableContext';
 import useLocale from './useLocale';

@@ -70,7 +70,7 @@ export const useShowController = <RecordType extends Record = Record>(
         {
             action: CRUD_GET_ONE,
             onFailure: () => {
-                notify('ra.notification.item_doesnt_exist', 'warning');
+                notify('notification.item_doesnt_exist', 'warning');
                 redirect('list', basePath);
                 refresh();
             },
@@ -78,7 +78,7 @@ export const useShowController = <RecordType extends Record = Record>(
     );
 
     const getResourceLabel = useGetResourceLabel();
-    const defaultTitle = translate('ra.page.show', {
+    const defaultTitle = translate('page.show', {
         name: getResourceLabel(resource, 1),
         id,
         record,

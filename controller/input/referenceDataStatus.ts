@@ -30,8 +30,8 @@ export const getStatusForInput = ({
         : null;
     const selectedReferenceError =
         input.value && !referenceRecord
-            ? translate('ra.input.references.single_missing', {
-                  _: 'ra.input.references.single_missing',
+            ? translate('input.references.single_missing', {
+                  _: 'input.references.single_missing',
               })
             : null;
 
@@ -113,8 +113,8 @@ export const getStatusForArrayInput = ({
             (!input.value ||
                 (input.value &&
                     selectedReferencesDataStatus === REFERENCES_STATUS_EMPTY))
-                ? translate('ra.input.references.all_missing', {
-                      _: 'ra.input.references.all_missing',
+                ? translate('input.references.all_missing', {
+                      _: 'input.references.all_missing',
                   })
                 : null,
         warning:
@@ -122,8 +122,8 @@ export const getStatusForArrayInput = ({
             (input.value &&
                 selectedReferencesDataStatus !== REFERENCES_STATUS_READY)
                 ? matchingReferencesError ||
-                  translate('ra.input.references.many_missing', {
-                      _: 'ra.input.references.many_missing',
+                  translate('input.references.many_missing', {
+                      _: 'input.references.many_missing',
                   })
                 : null,
         choices: Array.isArray(matchingReferences)

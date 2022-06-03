@@ -93,7 +93,7 @@ describe('useWarnWhenUnsavedChanges', () => {
             fireEvent.change(input, { target: { value: 'John Doe' } });
             fireEvent.click(getByText('Leave'));
             expect(window.confirm).toHaveBeenCalledWith(
-                'ra.message.unsaved_changes'
+                'message.unsaved_changes'
             );
             // check that we're still in the form and that the unsaved changes are here
             expect(
@@ -116,7 +116,7 @@ describe('useWarnWhenUnsavedChanges', () => {
             fireEvent.change(input, { target: { value: 'John Doe' } });
             fireEvent.click(getByText('Leave'));
             expect(window.confirm).toHaveBeenCalledWith(
-                'ra.message.unsaved_changes'
+                'message.unsaved_changes'
             );
             // check that we're no longer in the form
             expect(queryByText(field)).toBeNull();

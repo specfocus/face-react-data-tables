@@ -68,7 +68,7 @@ describe('ValidationError', () => {
         const { getByText } = renderWithTranslations(
             <ValidationError
                 error={{
-                    message: 'ra.validation.minValue',
+                    message: 'validation.minValue',
                     args: { value: 10 },
                 }}
             />
@@ -94,7 +94,7 @@ describe('ValidationError', () => {
         const { getByText } = renderWithTranslations(
             <ValidationError
                 error={{
-                    message: 'ra.validation.oneOf',
+                    message: 'validation.oneOf',
                     args: { list: ['foo', 'bar'] },
                 }}
             />

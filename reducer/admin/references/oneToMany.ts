@@ -3,8 +3,9 @@ import {
     CRUD_GET_MANY_REFERENCE_SUCCESS,
     CrudGetManyReferenceSuccessAction,
     CrudDeleteSuccessAction,
-} from '../../../../actions';
-import { Identifier, ReduxState } from '../../../types';
+} from '../../../actions';
+import { Identifier } from '../../../core/types';
+import { ReduxState } from '../../../redux/types';
 import { DELETE, DELETE_MANY } from '../../../core';
 
 const initialState = {};

@@ -26,7 +26,7 @@ function validateResponseFormat(
         logger(
             `The response to '${type}' must be like { data: ... }, but the received response does not have a 'data' key. The dataProvider is probably wrong for '${type}'.`
         );
-        throw new Error('ra.notification.data_provider_error');
+        throw new Error('notification.data_provider_error');
     }
     if (
         fetchActionsWithArrayOfRecordsResponse.includes(type) &&
@@ -35,7 +35,7 @@ function validateResponseFormat(
         logger(
             `The response to '${type}' must be like { data : [...] }, but the received data is not an array. The dataProvider is probably wrong for '${type}'`
         );
-        throw new Error('ra.notification.data_provider_error');
+        throw new Error('notification.data_provider_error');
     }
     if (
         fetchActionsWithArrayOfIdentifiedRecordsResponse.includes(type) &&
@@ -46,7 +46,7 @@ function validateResponseFormat(
         logger(
             `The response to '${type}' must be like { data : [{ id: 123, ...}, ...] }, but at least one received data item do not have an 'id' key. The dataProvider is probably wrong for '${type}'`
         );
-        throw new Error('ra.notification.data_provider_error');
+        throw new Error('notification.data_provider_error');
     }
     if (
         fetchActionsWithRecordResponse.includes(type) &&
@@ -55,7 +55,7 @@ function validateResponseFormat(
         logger(
             `The response to '${type}' must be like { data: { id: 123, ... } }, but the received data does not have an 'id' key. The dataProvider is probably wrong for '${type}'`
         );
-        throw new Error('ra.notification.data_provider_error');
+        throw new Error('notification.data_provider_error');
     }
     if (
         fetchActionsWithTotalResponse.includes(type) &&
@@ -64,7 +64,7 @@ function validateResponseFormat(
         logger(
             `The response to '${type}' must be like  { data: [...], total: 123 }, but the received response does not have a 'total' key. The dataProvider is probably wrong for '${type}'`
         );
-        throw new Error('ra.notification.data_provider_error');
+        throw new Error('notification.data_provider_error');
     }
 }
 

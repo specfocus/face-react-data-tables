@@ -161,7 +161,7 @@ describe('submitErrorsMutators', () => {
         const state = makeFormState({
             submitErrors: {
                 field: {
-                    message: 'ra.validation.min_length',
+                    message: 'validation.min_length',
                     args: { min: 5 },
                 },
             },

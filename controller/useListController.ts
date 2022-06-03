@@ -171,7 +171,7 @@ const useListController = <RecordType extends Record = Record>(
                 notify(
                     typeof error === 'string'
                         ? error
-                        : error.message || 'ra.notification.http_error',
+                        : error.message || 'notification.http_error',
                     'warning',
                     {
                         _:
@@ -210,7 +210,7 @@ const useListController = <RecordType extends Record = Record>(
     );
 
     const getResourceLabel = useGetResourceLabel();
-    const defaultTitle = translate('ra.page.list', {
+    const defaultTitle = translate('page.list', {
         name: getResourceLabel(resource, 2),
     });
 

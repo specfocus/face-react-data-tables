@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { ReduxState } from '../types';
+import { ReduxState } from '../redux/types';
 
 /**
  * Get the loading status, i.e. a boolean indicating if at least one request is pending

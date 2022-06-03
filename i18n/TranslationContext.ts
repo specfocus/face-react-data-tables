@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { I18nProvider } from '../types';
+import { I18nProvider } from './types';
 
 export interface TranslationContextProps {
     locale: string;

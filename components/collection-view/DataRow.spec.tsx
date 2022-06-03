@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { fireEvent } from '@testing-library/react';
-import { linkToRecord } from '../core';
-import { renderWithRedux } from '../test';
+import { linkToRecord } from '../../core';
+import { renderWithRedux } from '../../test';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import DataRow from './DataRow';

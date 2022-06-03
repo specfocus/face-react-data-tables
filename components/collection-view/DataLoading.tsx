@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import classnames from 'classnames';
-import { useTimeout, Identifier, Record } from '../core';
+import { useTimeout, Identifier, Record } from '../../core/types';
 
 import useDataViewStyles from './useDataViewStyles';
 import Placeholder from './Placeholder';

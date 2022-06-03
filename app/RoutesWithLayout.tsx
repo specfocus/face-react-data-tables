@@ -1,7 +1,7 @@
 import React, { Children, cloneElement, createElement } from 'react';
 import { Navigate, Route, RouteProps, Routes } from 'react-router';
 
-import WithPermissions from '../../auth/WithPermissions';
+import WithPermissions from '../auth/WithPermissions';
 import {
   ResourceChildren,
   CustomRoutes,

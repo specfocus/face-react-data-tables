@@ -5,7 +5,7 @@ import {
     SyntheticEvent,
 } from 'react';
 import { useDelete } from '../../dataProvider';
-import { CRUD_DELETE } from '../../../actions';
+import { CRUD_DELETE } from '../../actions';
 import {
     useRefresh,
     useNotify,
@@ -90,7 +90,7 @@ const useDeleteWithConfirmController = (
             setOpen(false);
             if (onSuccess === undefined) {
                 notify(
-                    'ra.notification.deleted',
+                    'notification.deleted',
                     'info',
                     { smart_count: 1 },
                     mutationMode === 'undoable'
@@ -107,7 +107,7 @@ const useDeleteWithConfirmController = (
                 notify(
                     typeof error === 'string'
                         ? error
-                        : error.message || 'ra.notification.http_error',
+                        : error.message || 'notification.http_error',
                     'warning',
                     {
                         _:

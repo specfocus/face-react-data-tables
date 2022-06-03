@@ -72,7 +72,7 @@ const useReferenceArrayFieldController = (
                 notify(
                     typeof error === 'string'
                         ? error
-                        : error.message || 'ra.notification.http_error',
+                        : error.message || 'notification.http_error',
                     'warning',
                     {
                         _:

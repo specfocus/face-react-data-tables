@@ -1,5 +1,5 @@
 import pickBy from 'lodash/pickBy';
-import { Identifier } from '../types';
+import { Identifier } from '../core/types';
 
 const defaultCacheDuration = 10 * 60 * 1000; // ten minutes
 
@@ -13,9 +13,9 @@ const defaultCacheDuration = 10 * 60 * 1000; // ten minutes
  * }
  */
 interface FetchedOutDates {
-    // FIXME: use [key: Identifier] once typeScript accepts any type as index (see https://github.com/Microsoft/TypeScript/pull/26797)
-    [key: string]: Date;
-    [key: number]: Date;
+  // FIXME: use [key: Identifier] once typeScript accepts any type as index (see https://github.com/Microsoft/TypeScript/pull/26797)
+  [key: string]: Date;
+  [key: number]: Date;
 }
 
 /**
@@ -31,28 +31,28 @@ interface FetchedOutDates {
  * @param cacheDuration How long until an old record is removed from the list
  */
 const getFetchedAt = (
-    newRecordIds: Identifier[] = [],
-    oldRecordFetchedAt: FetchedOutDates = {},
-    now = new Date(),
-    cacheDuration = defaultCacheDuration
+  newRecordIds: Identifier[] = [],
+  oldRecordFetchedAt: FetchedOutDates = {},
+  now = new Date(),
+  cacheDuration = defaultCacheDuration
 ): FetchedOutDates => {
-    // prepare new records and timestamp them
-    const newFetchedAt = {};
-    newRecordIds.forEach(recordId => (newFetchedAt[recordId] = now));
+  // prepare new records and timestamp them
+  const newFetchedAt = {};
+  newRecordIds.forEach(recordId => (newFetchedAt[recordId] = now));
 
-    // remove outdated entry
-    const latestValidDate = new Date();
-    latestValidDate.setTime(latestValidDate.getTime() - cacheDuration);
+  // remove outdated entry
+  const latestValidDate = new Date();
+  latestValidDate.setTime(latestValidDate.getTime() - cacheDuration);
 
-    const stillValidFetchedAt = pickBy(
-        oldRecordFetchedAt,
-        date => date > latestValidDate
-    );
+  const stillValidFetchedAt = pickBy(
+    oldRecordFetchedAt,
+    date => date > latestValidDate
+  );
 
-    return {
-        ...stillValidFetchedAt,
-        ...newFetchedAt,
-    };
+  return {
+    ...stillValidFetchedAt,
+    ...newFetchedAt,
+  };
 };
 
 export default getFetchedAt;

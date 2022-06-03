@@ -3,7 +3,7 @@ import { ComponentType } from 'react';
 
 import BaseAppContext from './BaseAppContext';
 import BaseAppUI from './BaseAppUI';
-import { AppProps } from '../types';
+import { AppProps } from './types';
 
 export type ChildrenFunction = () => ComponentType[];
 

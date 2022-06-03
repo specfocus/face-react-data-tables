@@ -4,7 +4,7 @@ import { FETCH_END, FETCH_ERROR } from '../fetchActions';
 import {
   NotificationSideEffect,
   RedirectionSideEffect,
-} from '../../core_/sideEffect';
+} from '../../sideEffect';
 
 export const crudCreate = (
   resource: string,
@@ -19,7 +19,7 @@ export const crudCreate = (
     fetch: CREATE,
     onSuccess: {
       notification: {
-        body: 'ra.notification.created',
+        body: 'notification.created',
         level: 'info',
         messageArgs: {
           smart_count: 1,
@@ -30,7 +30,7 @@ export const crudCreate = (
     },
     onFailure: {
       notification: {
-        body: 'ra.notification.http_error',
+        body: 'notification.http_error',
         level: 'warning',
       },
     },

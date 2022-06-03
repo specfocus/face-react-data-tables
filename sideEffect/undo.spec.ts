@@ -62,7 +62,7 @@ describe('undo saga', () => {
         });
         it('should display the notification', () => {
             expect(generator.next().value).toEqual(
-                put(showNotification('ra.notification.canceled'))
+                put(showNotification('notification.canceled'))
             );
         });
         it('should send a refresh', () => {

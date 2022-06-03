@@ -254,7 +254,7 @@ describe('Auth saga', () => {
                 );
                 expect(dispatch).toHaveBeenCalledWith(hideNotification());
                 expect(dispatch).toHaveBeenCalledWith(
-                    showNotification('ra.notification.logged_out', 'warning')
+                    showNotification('notification.logged_out', 'warning')
                 );
                 expect(dispatch).toHaveBeenCalledWith(clearState());
             });

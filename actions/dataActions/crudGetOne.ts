@@ -5,7 +5,7 @@ import {
   NotificationSideEffect,
   RedirectionSideEffect,
   RefreshSideEffect,
-} from '../../core_/sideEffect';
+} from '../../sideEffect';
 
 export const crudGetOne = (
   resource: string,
@@ -21,7 +21,7 @@ export const crudGetOne = (
     basePath,
     onFailure: {
       notification: {
-        body: 'ra.notification.item_doesnt_exist',
+        body: 'notification.item_doesnt_exist',
         level: 'warning',
       },
       redirectTo: 'list',

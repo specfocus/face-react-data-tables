@@ -61,7 +61,7 @@ export const performUndoableQuery = ({
     undoableEventEmitter.once('end', ({ isUndo }) => {
         dispatch(stopOptimisticMode());
         if (isUndo) {
-            dispatch(showNotification('ra.notification.canceled'));
+            dispatch(showNotification('notification.canceled'));
             dispatch(refreshView());
             if (window) {
                 window.removeEventListener(

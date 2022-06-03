@@ -23,27 +23,27 @@ import useLocale from './useLocale';
  * @param {*} BaseComponent The component to decorate
  */
 const withTranslate = (BaseComponent: ComponentType): ComponentType => {
-    warning(
-        typeof BaseComponent === 'string',
-        `The translate function is a Higher Order Component, and should not be called directly with a translation key. Use the translate function passed as prop to your component props instead:
+  warning(
+    typeof BaseComponent === 'string',
+    `The translate function is a Higher Order Component, and should not be called directly with a translation key. Use the translate function passed as prop to your component props instead:
 
 const MyHelloButton = ({ translate }) => (
     <button>{translate('myroot.hello.world')}</button>
 );`
+  );
+
+  const TranslatedComponent = props => {
+    const translate = useTranslate();
+    const locale = useLocale();
+
+    return (
+      <BaseComponent {...props} translate={translate} locale={locale} />
     );
+  };
 
-    const TranslatedComponent = props => {
-        const translate = useTranslate();
-        const locale = useLocale();
+  TranslatedComponent.defaultProps = BaseComponent.defaultProps;
 
-        return (
-            <BaseComponent {...props} translate={translate} locale={locale} />
-        );
-    };
-
-    TranslatedComponent.defaultProps = BaseComponent.defaultProps;
-
-    return TranslatedComponent;
+  return TranslatedComponent;
 };
 
 export default withTranslate;

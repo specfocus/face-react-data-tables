@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, Children, ReactNode } from 'react';
 
 import { useSafeSetState } from '../util/hooks';
 import { TranslationContext } from './TranslationContext';
-import { I18nProvider } from '../types';
+import { I18nProvider } from './types';
 
 export interface TranslationProviderProps {
     locale?: string;

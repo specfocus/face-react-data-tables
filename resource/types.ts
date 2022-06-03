@@ -1,5 +1,15 @@
-import { ComponentType } from 'react';
+import { ComponentType, ReactElement, ReactNode } from 'react';
 import { PathMatch, RouteProps } from 'react-router';
+
+export interface ResourceDefinition {
+  readonly name: string;
+  readonly options?: any;
+  readonly hasList?: boolean;
+  readonly hasEdit?: boolean;
+  readonly hasShow?: boolean;
+  readonly hasCreate?: boolean;
+  readonly icon?: any;
+}
 
 export interface ResourceComponentInjectedProps {
   basePath?: string;
@@ -47,3 +57,9 @@ export interface ResourceProps {
   icon?: ComponentType<any>;
   options?: object;
 }
+
+export type ResourceElement = ReactElement<ResourceProps>;
+export type RenderResourcesFunction = (
+    permissions: any
+) => ResourceElement[] | Promise<ResourceElement[]>;
+export type ResourceChildren = RenderResourcesFunction | ReactNode;

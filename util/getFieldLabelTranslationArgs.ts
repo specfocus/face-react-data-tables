@@ -1,9 +1,9 @@
 import inflection from 'inflection';
 
 interface Args {
-    label?: string;
-    resource?: string;
-    source?: string;
+  label?: string;
+  resource?: string;
+  source?: string;
 }
 
 type TranslationArguments = [string, any?];
@@ -18,20 +18,20 @@ type TranslationArguments = [string, any?];
  *  </span>
  */
 export default (options?: Args): TranslationArguments => {
-    if (!options) {
-        return [''];
-    }
+  if (!options) {
+    return [''];
+  }
 
-    const { label, resource, source } = options;
+  const { label, resource, source } = options;
 
-    return typeof label !== 'undefined'
-        ? [label, { _: label }]
-        : typeof source !== 'undefined'
-        ? [
-              `resources.${resource}.fields.${source}`,
-              {
-                  _: inflection.transform(source, ['underscore', 'humanize']),
-              },
-          ]
-        : [''];
+  return typeof label !== 'undefined'
+    ? [label, { _: label }]
+    : typeof source !== 'undefined'
+      ? [
+        `resources.${resource}.fields.${source}`,
+        {
+          _: inflection.transform(source, ['underscore', 'humanize']),
+        },
+      ]
+      : [''];
 };

@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { FETCH_END, REFRESH_VIEW } from '../../../../actions';
+import { FETCH_END, REFRESH_VIEW } from '../../../actions';
 import {
     CREATE,
     DELETE,
@@ -11,7 +11,7 @@ import {
     UPDATE,
     UPDATE_MANY,
 } from '../../../core';
-import { Identifier } from '../../../types';
+import { Identifier } from '../../../core/types';
 
 interface ValidityRegistry {
     // FIXME: use [key: Identifier] once typeScript accepts any type as index (see https://github.com/Microsoft/TypeScript/pull/26797)

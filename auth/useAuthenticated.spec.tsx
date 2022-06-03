@@ -91,7 +91,7 @@ describe('useAuthenticated', () => {
       expect(authProvider.logout.mock.calls[0][0]).toEqual({});
       expect(dispatch).toHaveBeenCalledTimes(2);
       expect(dispatch.mock.calls[0][0]).toEqual(
-        showNotification('ra.auth.auth_check_error', 'warning', {
+        showNotification('auth.auth_check_error', 'warning', {
           messageArgs: {},
           undoable: false,
         })

@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import isEqual from 'lodash/isEqual';
-import { FETCH_END } from '../../../../actions';
+import { FETCH_END } from '../../../actions';
 import {
     CREATE,
     DELETE,
@@ -13,7 +13,7 @@ import {
     UPDATE_MANY,
 } from '../../../core';
 import getFetchedAt from '../../../util/getFetchedAt';
-import { Record, Identifier } from '../../../types';
+import { Identifier, Record } from '../../../core/types';
 
 /**
  * A list of records indexed by id, together with their fetch dates

@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import RoutesWithLayout from './RoutesWithLayout';
+import RoutesWithLayout from '../app/RoutesWithLayout';
 import { useLogout, useGetPermissions, useAuthState } from '../../auth';
 import { useTimeout, useSafeSetState } from '../util';
 import { useScrollToTop } from './useScrollToTop';

@@ -64,7 +64,7 @@ const useCheckAuth = (): CheckAuth => {
             (error && error.message === false);
           !shouldSkipNotify &&
             notify(
-              getErrorMessage(error, 'ra.auth.auth_check_error'),
+              getErrorMessage(error, 'auth.auth_check_error'),
               'warning'
             );
         }

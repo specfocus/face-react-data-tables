@@ -45,7 +45,7 @@ describe('<DataHeaderCell />', () => {
           </tbody>
         </table>
       );
-      expect(getByTitle('ra.action.sort').dataset.field).toBe('title');
+      expect(getByTitle('action.sort').dataset.field).toBe('title');
     });
 
     it('should be enabled when field has a sortBy props', () => {
@@ -62,7 +62,7 @@ describe('<DataHeaderCell />', () => {
           </tbody>
         </table>
       );
-      expect(getByTitle('ra.action.sort').dataset.field).toBe('title');
+      expect(getByTitle('action.sort').dataset.field).toBe('title');
     });
 
     it('should be change order when field has a sortByOrder props', () => {
@@ -81,7 +81,7 @@ describe('<DataHeaderCell />', () => {
           </tbody>
         </table>
       );
-      expect(getByTitle('ra.action.sort').dataset.order).toBe('DESC');
+      expect(getByTitle('action.sort').dataset.order).toBe('DESC');
     });
 
     it('should be keep ASC order when field has not sortByOrder props', () => {
@@ -98,7 +98,7 @@ describe('<DataHeaderCell />', () => {
           </tbody>
         </table>
       );
-      expect(getByTitle('ra.action.sort').dataset.order).toBe('ASC');
+      expect(getByTitle('action.sort').dataset.order).toBe('ASC');
     });
 
     it('should be disabled when field has no sortBy and no source', () => {
@@ -115,7 +115,7 @@ describe('<DataHeaderCell />', () => {
           </tbody>
         </table>
       );
-      expect(queryAllByTitle('ra.action.sort')).toHaveLength(0);
+      expect(queryAllByTitle('action.sort')).toHaveLength(0);
     });
 
     it('should be disabled when sortable prop is explicitly set to false', () => {
@@ -134,7 +134,7 @@ describe('<DataHeaderCell />', () => {
           </tbody>
         </table>
       );
-      expect(queryAllByTitle('ra.action.sort')).toHaveLength(0);
+      expect(queryAllByTitle('action.sort')).toHaveLength(0);
     });
 
     it('should use cell className if specified', () => {

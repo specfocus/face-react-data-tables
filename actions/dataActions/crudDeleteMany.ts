@@ -1,7 +1,7 @@
 import { Identifier, Record } from '../../core/types';
 import { DELETE_MANY } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
-import { NotificationSideEffect, RefreshSideEffect } from '../../core_/sideEffect';
+import { NotificationSideEffect, RefreshSideEffect } from '../../sideEffect';
 
 export const crudDeleteMany = (
   resource: string,
@@ -16,7 +16,7 @@ export const crudDeleteMany = (
     fetch: DELETE_MANY,
     onSuccess: {
       notification: {
-        body: 'ra.notification.deleted',
+        body: 'notification.deleted',
         level: 'info',
         messageArgs: {
           smart_count: ids.length,
@@ -28,7 +28,7 @@ export const crudDeleteMany = (
     },
     onFailure: {
       notification: {
-        body: 'ra.notification.http_error',
+        body: 'notification.http_error',
         level: 'warning',
       },
     },

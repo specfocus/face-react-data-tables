@@ -1,7 +1,7 @@
 import { Record, PaginationPayload, SortPayload } from '../../core/types';
 import { GET_LIST } from '../../core';
 import { FETCH_END, FETCH_ERROR } from '../fetchActions';
-import { NotificationSideEffect } from '../../core_/sideEffect';
+import { NotificationSideEffect } from '../../sideEffect';
 
 export const crudGetList = (
   resource: string,
@@ -16,7 +16,7 @@ export const crudGetList = (
     fetch: GET_LIST,
     onFailure: {
       notification: {
-        body: 'ra.notification.http_error',
+        body: 'notification.http_error',
         level: 'warning',
       },
     },

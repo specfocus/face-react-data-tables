@@ -71,7 +71,7 @@ export const handleLogin = (authProvider: AuthProvider) =>
                 error: e,
                 meta: { auth: true },
             });
-            const errorMessage = getErrorMessage(e, 'ra.auth.sign_in_error');
+            const errorMessage = getErrorMessage(e, 'auth.sign_in_error');
             yield put(showNotification(errorMessage, 'warning'));
         }
     };
@@ -95,7 +95,7 @@ export const handleCheck = (authProvider: AuthProvider) =>
 
             const errorMessage = getErrorMessage(
                 error,
-                'ra.auth.auth_check_error'
+                'auth.auth_check_error'
             );
             yield put(showNotification(errorMessage, 'warning'));
         }
@@ -130,7 +130,7 @@ export const handleFetchError = (authProvider: AuthProvider) =>
 
             yield put(hideNotification());
             yield put(
-                showNotification('ra.notification.logged_out', 'warning')
+                showNotification('notification.logged_out', 'warning')
             );
         }
     };
