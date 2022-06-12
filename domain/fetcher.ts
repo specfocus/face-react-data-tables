@@ -1,7 +1,7 @@
 import { atom, selectorFamily, useRecoilCallback } from 'recoil';
 import type { Domain } from './Domain';
 // import type { Domain } from '@specfocus/spec-focus/domain';
-import { supplant } from '@specfocus/spec-focus/string';
+import supplant from '@specfocus/spec-focus/expressions/supplant';
 
 export const CONTENT_TYPE = 'content-type';
 

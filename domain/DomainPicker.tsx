@@ -3,7 +3,7 @@ import Autocomplete, { MixedAutocompleteProps } from '../../components/MixedAuto
 import React from 'react';
 import type { Domain } from './Domain';
 import { useDomain, useDomains } from './store';
-import { supplant } from '@specfocus/spec-focus/string';
+import supplant from '@specfocus/spec-focus/expressions/supplant';
 import { SxProps } from '@mui/material/styles';
 
 export interface DomainPickerProps<T extends {} = any> extends
