@@ -3,7 +3,7 @@ import {
     resolveBrowserLocale,
     mergeTranslations,
     DEFAULT_LOCALE,
-} from './index';
+} from '.';
 
 describe('TranslationUtils', () => {
     describe('resolveBrowserLocale', () => {

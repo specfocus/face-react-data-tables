@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { DEFAULT_LOCALE } from './index';
+import { DEFAULT_LOCALE } from '.';
 
 interface AllNavigatorLanguage extends NavigatorLanguage {
     browserLanguage?: string;
