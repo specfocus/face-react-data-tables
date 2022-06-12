@@ -1,5 +1,5 @@
 import expect from 'expect';
-import reducer, { getReferenceResource } from './index';
+import reducer, { getReferenceResource } from '.';
 import { REGISTER_RESOURCE, UNREGISTER_RESOURCE } from '../../../actions';
 import { CRUD_CHANGE_LIST_PARAMS } from '../../../actions/listActions';
 
