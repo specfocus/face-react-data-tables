@@ -1,10 +1,10 @@
 {
-  "name": "@specfocus/data-focus",
+  "name": "@specfocus/view-focus.table",
   "version": "0.0.1",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/specfocus/release.git"
+    "url": "https://github.com/specfocus/view-focus.table.git"
   },
   "description": "React library with Recoil, using main/actions with async JSON and @mui data table",
   "author": "Lucas M. Oromi",
@@ -25,15 +25,13 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "dependencies": {
-    "@specfocus/json-focus": "^0.0.1",
-    "@specfocus/main-focus": "^0.0.1",
-    "@specfocus/quiz-focus": "^0.0.1"
-  },
   "devDependencies": {
     "@mui/lab": "^5.0.0-alpha.61",
     "@mui/material": "^5.2.6",
     "@mui/styles": "^5.3.0",
+    "@specfocus/main-focus": "^0.0.1",
+    "@specfocus/pack-focus.json": "^0.0.1",
+    "@specfocus/quiz-focus": "^0.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -59,6 +57,8 @@
     "@mui/material": ">= 5.x",
     "@mui/styles": ">= 5.x",
     "@specfocus/main-focus": ">= 0.0.3",
+    "@specfocus/pack-focus.json": ">= 0.0.3",
+    "@specfocus/view-focus": ">= 0.0.3",
     "date-fns": ">= 2.x",
     "react": ">= 18.x",
     "react-dom": ">= 18.x",
