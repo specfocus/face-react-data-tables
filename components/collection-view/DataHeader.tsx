@@ -1,7 +1,7 @@
 import { Checkbox, TableCell, TableHead, TableRow } from '@mui/material';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import { Children, isValidElement, useCallback } from 'react';
 import {
   Identifier,

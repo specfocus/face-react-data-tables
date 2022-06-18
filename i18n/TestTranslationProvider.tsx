@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import lodashGet from 'lodash/get';
 
 import { TranslationContext } from './TranslationContext';

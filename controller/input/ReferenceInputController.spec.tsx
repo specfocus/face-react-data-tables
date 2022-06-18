@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useState, useCallback } from 'react';
 import { fireEvent, waitFor } from '@testing-library/react';
 import omit from 'lodash/omit';

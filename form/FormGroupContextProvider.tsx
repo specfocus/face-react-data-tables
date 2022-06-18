@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ReactNode, useEffect } from 'react';
 import { FormGroupContext } from './FormGroupContext';
 import { useFormContext } from './useFormContext';

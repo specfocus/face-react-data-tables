@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import expect from 'expect';
 import { fireEvent, waitFor, act } from '@testing-library/react';
-import polyglotI18nProvider from '../i18n/polyglot';
+import i18nProvider from '../i18n/polyglot';
 
 import useTranslate from './useTranslate';
 import useSetLocale from './useSetLocale';
@@ -48,7 +48,7 @@ describe('useSetLocale', () => {
     });
 
     it('should use the i18n provider when using TranslationProvider', async () => {
-        const i18nProvider = polyglotI18nProvider(locale => {
+        const i18nProvider = createI18nProvider(locale => {
             if (locale === 'en') return { hello: 'hello' };
             if (locale === 'fr') return { hello: 'bonjour' };
         });

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 import { CustomRoute } from '../types';
 
@@ -7,7 +7,7 @@ import { CustomRoute } from '../types';
  *
  * @example
  * // in src/customRoutes.js
- * import * as React from "react";
+ * import React from "react";
  * import { Route } from 'react-router-dom';
  * import { RouteWithoutLayout } from '../app';
  * import Foo from './Foo';
@@ -19,7 +19,7 @@ import { CustomRoute } from '../types';
  * ];
  *
  * // in src/App.js
- * import * as React from "react";
+ * import React from "react";
  * import { Admin } from '../app';
  *
  * import customRoutes from './customRoutes';

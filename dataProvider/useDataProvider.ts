@@ -33,7 +33,7 @@ import {
  *
  * @example Basic usage
  *
- * import * as React from 'react';
+ * import React from 'react';
  * import { useState } from 'react';
  * import { useDataProvider } from '../app';
  *

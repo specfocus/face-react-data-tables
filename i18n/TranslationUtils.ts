@@ -12,10 +12,10 @@ interface AllNavigatorLanguage extends NavigatorLanguage {
  * Use it to determine the <Admin> locale at runtime.
  *
  * @example
- *     import * as React from "react";
+ *     import React from "react";
  *     import { Admin, Resource, resolveBrowserLocale } from '../app';
- *     import englishMessages from 'ra-language-english';
- *     import frenchMessages from 'ra-language-french';
+ *     import englishMessages from '@specfocus/locales/en/core';
+ *     import frenchMessages from '@specfocus/locales/fr/core';
  *     const messages = {
  *        fr: frenchMessages,
  *        en: englishMessages,
@@ -47,9 +47,9 @@ export const resolveBrowserLocale = (defaultLocale = DEFAULT_LOCALE) => {
  * Use it to merge translations from addons with the main ../../app translations.
  *
  * @example
- *     import * as React from "react";
+ *     import React from "react";
  *     import { Admin, Resource, mergeTranslations } from '../app';
- *     import englishMessages from 'ra-language-english';
+ *     import englishMessages from '@specfocus/locales/en/core';
  *     import englishTreeMessages from 'ra-tree-language-english';
  *     const messages = {
  *        en: mergeTranslations(englishMessages, englishTreeMessages),

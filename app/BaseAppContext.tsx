@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import { Fragment } from 'react';
 import { ComponentType, useContext, useState } from 'react';
 // import { Provider, ReactReduxContext } from 'react-redux';
 import { History } from 'history';

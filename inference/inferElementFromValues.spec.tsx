@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { FunctionComponent } from 'react';
 import inferElementFromValues from './inferElementFromValues';
 import InferredElement from './InferredElement';

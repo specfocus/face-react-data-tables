@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { makeStyles } from '@mui/styles';
 import classnames from 'classnames';
 import { Theme } from '@mui/material/styles/createTheme';

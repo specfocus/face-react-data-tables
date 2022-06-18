@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { createElement, ComponentType, useMemo, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 

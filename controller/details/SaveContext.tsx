@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { createContext, MutableRefObject, useContext, useMemo } from 'react';
 import pick from 'lodash/pick';
 

@@ -1,4 +1,5 @@
-import React, { Children, cloneElement, createElement } from 'react';
+import React from 'react';
+import { Children, cloneElement, createElement } from 'react';
 import { Navigate, Route, RouteProps, Routes } from 'react-router';
 
 import WithPermissions from '../auth/WithPermissions';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { renderHook } from '../../test';
 import useFilterState from './useFilterState';
 import { render, act, waitFor } from '@testing-library/react';

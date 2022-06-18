@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { useCreateController } from './useCreateController';
 import { CreateContextProvider } from './CreateContextProvider';
 

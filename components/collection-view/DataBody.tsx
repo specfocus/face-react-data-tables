@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { cloneElement, memo, FC, ReactElement } from 'react';
 import PropTypes from 'prop-types';
 import { TableBody, TableBodyProps } from '@mui/material';

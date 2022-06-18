@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ReactNode } from 'react';
 import { useFormState } from 'react-final-form';
 import { FormSubscription } from 'final-form';

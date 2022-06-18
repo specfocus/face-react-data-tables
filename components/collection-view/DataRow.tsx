@@ -1,4 +1,5 @@
-import React, {
+import React from 'react';
+import {
   isValidElement,
   cloneElement,
   createElement,
@@ -24,7 +25,7 @@ import {
   Record,
   useResourceContext,
   RecordContextProvider,
-} from '../core';
+} from '../records';
 import { shallowEqual } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

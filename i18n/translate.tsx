@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ComponentType } from 'react';
 import { default as warning } from '../util/warning';
 import useTranslate from './useTranslate';
@@ -11,7 +11,7 @@ import useLocale from './useLocale';
  * the translation dictionaries and function in the context.
  *
  * @example
- *     import * as React from "react";
+ *     import React from "react";
  *     import { translate } from '../app';
  *
  *     const MyHelloButton = ({ translate }) => (

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { renderWithRedux } from '../../test';
 import { useGetResourceLabel } from './useGetResourceLabel';
 import { TestTranslationProvider } from '../i18n';

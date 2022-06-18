@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ReactElement, ReactNode } from 'react';
 import { ResourceContext, ResourceContextValue } from './ResourceContext';
 

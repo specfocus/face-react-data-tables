@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import expect from 'expect';
 import { render, fireEvent } from '@testing-library/react';
 import { Form, Field } from 'react-final-form';

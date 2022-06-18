@@ -1,5 +1,5 @@
-import * as React from 'react';
-import polyglotI18nProvider from '../../i18n/polyglot';
+import React from 'react';
+import i18nProvider from '../../i18n/polyglot';
 
 import ValidationError from './ValidationError';
 import { TranslationProvider } from '../i18n';
@@ -11,7 +11,7 @@ const translate = jest.fn(key => key);
 const renderWithTranslations = content =>
     renderWithRedux(
         <TranslationProvider
-            i18nProvider={polyglotI18nProvider(() => ({
+            i18nProvider={i18nProvider(() => ({
                 ra: {
                     validation: {
                         required: 'Required',

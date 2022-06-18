@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ReactElement, memo } from 'react';
 
 import useTranslate from '../i18n/useTranslate';

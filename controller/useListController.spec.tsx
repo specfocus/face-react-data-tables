@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import expect from 'expect';
 import { fireEvent, waitFor, act } from '@testing-library/react';
 import lolex from 'lolex';

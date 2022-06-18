@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { FunctionComponent, ReactElement } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { Form, useFormState } from 'react-final-form';

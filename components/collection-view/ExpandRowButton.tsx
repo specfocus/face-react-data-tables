@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ElementType, memo } from 'react';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

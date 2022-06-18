@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { ElementType } from 'react';
 import FormField from './FormField';
 

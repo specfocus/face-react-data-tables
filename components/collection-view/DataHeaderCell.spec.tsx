@@ -1,5 +1,5 @@
 import expect from 'expect';
-import * as React from 'react';
+import React from 'react';
 import { render } from '@testing-library/react';
 
 import { DataHeaderCell } from './DataHeaderCell';

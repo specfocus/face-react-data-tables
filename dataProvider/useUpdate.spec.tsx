@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { renderWithRedux } from '../../test';
 import { waitFor } from '@testing-library/react';
 import expect from 'expect';
